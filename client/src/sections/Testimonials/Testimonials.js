@@ -18,7 +18,7 @@ function Testimonials() {
 
   useEffect(() => {
     axios
-      .get("https://app.christianhernandez.ca/api/reviews", options)
+      .get("https://app.sbcapprenticeship.com/api/reviews", options)
       .then((response) => {
         setReviewData(response.data);
       })

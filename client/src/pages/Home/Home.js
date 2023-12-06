@@ -8,7 +8,7 @@ import Contact from '../../sections/Contact/Contact'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import Banner from '../../sections/Banner/Banner'
 
-function Home() {
+function Home({ enrollmentForm, setEnrollmentForm }) {
     const [contactForm, setContactForm] = useState(false)
 
     return (
@@ -18,7 +18,7 @@ function Home() {
                     <ContactForm setContactForm={setContactForm} />
                 )
             }
-            <Hero />
+            <Hero enrollmentForm={enrollmentForm} setEnrollmentForm={setEnrollmentForm} />
             <Highlights />
             <About />
             <Classes />

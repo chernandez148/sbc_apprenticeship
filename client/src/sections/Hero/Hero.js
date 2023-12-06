@@ -8,9 +8,7 @@ import graduateOne from "../../assets/graduate-1.jpg";
 import graduateTwo from "../../assets/graduate-2.jpg";
 import EnrollmentForm from "../../components/EnrollmentForm/EnrollmentForm";
 
-function Hero() {
-  const [enrollmentForm, setEnrollmentForm] = useState(false);
-
+function Hero({ enrollmentForm, setEnrollmentForm }) {
   const handleEnrollmentForm = () => {
     setEnrollmentForm(true);
   };
