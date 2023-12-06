@@ -1,0 +1,43 @@
+body {
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.accent {
+    color: #26d9d2;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.rotating {
+    animation: rotate 15s ease-in-out infinite;
+}

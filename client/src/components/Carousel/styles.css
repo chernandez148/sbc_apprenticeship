@@ -1,0 +1,21 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.direction-wrapper {
+    position: relative;
+    z-index: 99;
+}

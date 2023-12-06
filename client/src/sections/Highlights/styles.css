@@ -1,0 +1,180 @@
+.Highlights {
+    padding: 0 6rem;
+}
+
+.highlights-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.highlights-wrapper .card {
+    width: 25%;
+    padding: 0;
+    border: 0;
+}
+
+.highlights-wrapper .card {
+    background: #287bff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 320px;
+    height: 380px;
+    margin: 1rem .5rem;
+    border-radius: 20px;
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    box-shadow: 0 15px 0 #fff,
+        inset 0 -15px 0 rgba(255, 255, 255, 0.24),
+        0 45px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform .5s ease-in-out;
+}
+
+.highlights-wrapper .card:hover {
+    transform: translateY(-20px);
+}
+
+.highlights-wrapper .card::before {
+    content: "";
+    position: absolute;
+    top: -140px;
+    left: -40%;
+    padding: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+    transform: rotate(35deg);
+    pointer-events: none;
+    filter: blur(5px);
+}
+
+.highlights-wrapper .card:nth-child(1) {
+    background: linear-gradient(to bottom, #ff2ae0, #645bf6)!important;
+}
+
+.highlights-wrapper .card:nth-child(2) {
+    background: linear-gradient(to bottom, #ffec61, #f321d7)!important;
+}
+
+.highlights-wrapper .card:nth-child(3) {
+    background: linear-gradient(to bottom, #24ff72, #9a4eff)!important;
+}
+
+.highlights-wrapper .card .icon {
+    position: relative;
+    width: 140px;
+    height: 120px;
+    background: #06092a;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1),
+        inset 0 -8px 0 #fff;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.highlights-wrapper .card .icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-right-radius: 50px;
+    box-shadow: 15px -15px 0 15px #06092a;
+}
+
+.highlights-wrapper .card .icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-left-radius: 50px;
+    box-shadow: -15px -15px 0 15px #06092a;
+}
+
+.highlights-wrapper .card .icon ion-icon {
+    color: #fff;
+    position: relative;
+    font-size: 6em;
+    z-index: 1000;
+    --ionicon-stroke-width: 24px;
+}
+
+
+.highlights-wrapper .card .content {
+    position: absolute;
+    width: 100%;
+    padding: 30px 0;
+    padding-top: 150px;
+    text-align: center;
+}
+
+.highlights-wrapper .card img {
+    position: relative;
+    z-index: 3;
+    border-radius: 50%;
+}
+
+.highlights-wrapper .card .content h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.highlights-wrapper .card .content p {
+    color: #fff;
+    line-height: 1.5em;
+    padding: 0 1rem;
+}
+
+.full-info {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000000b3;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1500px) {
+
+    .highlights-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Highlights {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .Highlights {
+        padding: 0 1rem;
+    }
+
+    .highlights-wrapper {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .highlights-wrapper .card {
+        width: 100%;
+    }
+}

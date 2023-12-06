@@ -1,0 +1,12 @@
+.SlideShow {
+    position: relative;
+}
+
+.SlideShow img {
+    position: absolute;
+    transition: opacity .5s ease-in-out;
+}
+
+.SlideShow img:last-child {
+    position: relative !important;
+}

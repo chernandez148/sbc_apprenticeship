@@ -1,0 +1,35 @@
+.GalleryGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Three columns with different widths */
+    grid-auto-rows: minmax(100px, auto);
+    /* Each row has at least 100px height */
+    gap: 10px;
+    /* Space between grid items */
+}
+
+.gallery-item {
+    background-color: #f3f3f3;
+    /* Example background color */
+    border-radius: 10px;
+    /* Border radius for each item */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Adjust the height for the first item to span multiple rows if needed */
+.gallery-item:first-child {
+    grid-row: span 2;
+}
+
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.1);
+}

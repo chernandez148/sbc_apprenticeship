@@ -1,0 +1,11 @@
+.button {
+    background: #1CD8D2;
+    background: linear-gradient(to right, #93EDC7, #1CD8D2);
+    color: white;
+    padding: .75rem 1.75rem;
+    border-radius: 5px;
+    border: 0;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}

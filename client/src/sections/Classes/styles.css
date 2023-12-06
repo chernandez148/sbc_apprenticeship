@@ -1,0 +1,229 @@
+.Classes {
+    padding: 0 6rem;
+    position: relative;
+    /* background-image: url('../../assets/wave-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right; */
+}
+
+.Classes .scissors {
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    right: 0;
+}
+
+.Classes .carousel {
+    padding: 1rem 0;
+}
+
+.classes-wrapper .carousel {
+    display: -webkit-box;
+    overflow-x: hidden;
+}
+
+.classes-wrapper .carousel-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: calc(20% - 1rem);
+    height: 380px;
+    margin: 1rem 0.5rem;
+    border-radius: 20px;
+    border-bottom-left-radius: 160px;
+    border-bottom-right-radius: 160px;
+    box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255, 255, 255, 0.24), 0 45px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform .5s ease-in-out;
+    filter: saturate(0.5);
+}
+
+
+.classes-wrapper .card {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.classes-wrapper .card::before {
+    content: "";
+    position: absolute;
+    top: -170px;
+    left: -40%;
+    padding: 0;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent, rgb(0 0 0 / 52%));
+    transform: rotate(35deg);
+    pointer-events: none;
+    filter: blur(9px);
+    z-index: 399;
+}
+
+.classes-wrapper .card .icon {
+    position: relative;
+    width: 140px;
+    height: 120px;
+    background: #06092a;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1), inset 0 -8px 0 #fff;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.classes-wrapper .card .icon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-right-radius: 50px;
+    box-shadow: 15px -15px 0 15px #06092a;
+}
+
+.classes-wrapper .card .icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-top-left-radius: 50px;
+    box-shadow: -15px -15px 0 15px #06092a;
+}
+
+.classes-wrapper .card .icon ion-icon {
+    color: #fff;
+    position: relative;
+    font-size: 6em;
+    z-index: 1000;
+    --ionicon-stroke-width: 24px;
+}
+
+
+.classes-wrapper .card .content {
+    position: absolute;
+    width: 100%;
+    padding: 30px 0;
+    padding-top: 150px;
+    text-align: center;
+    z-index: 999;
+}
+
+.classes-wrapper .card img {
+    position: relative;
+    z-index: 3;
+}
+
+.classes-wrapper .card .content h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.classes-wrapper .card .content p {
+    color: #fff;
+    line-height: 1.5em;
+    padding: 0 1rem;
+}
+
+.Classes .card img {
+    width: 100%;
+    border-radius: 0;
+}
+
+.Classes .card img:nth-child(2) {
+    position: absolute;
+    z-index: 1;
+    width: 75px;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.Classes .card a,
+.Classes .card p {
+    display: none;
+}
+
+.Classes .card h4 {
+    margin: 0;
+    padding: 2.5rem 1.5rem;
+    font-size: 20px;
+}
+
+.Classes .button-wrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.Classes button {
+    margin: .5rem;
+    padding: 1rem;
+    border: 0;
+    background-color: #26d9d2;
+    color: white;
+}
+
+
+@media (max-width:1699px) {
+    .classes-wrapper .carousel-card {
+        width: calc(25% - 1rem);
+    }
+}
+
+@media (max-width:1299px) {
+    .classes-wrapper .carousel-card {
+        width: calc(33.33% - 1rem);
+    }
+}
+
+@media (max-width: 1000px) {
+    .Classes {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .classes-wrapper .carousel-card {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .Classes {
+        padding: 0 1rem;
+    }
+
+    .Classes .scissors {
+        bottom: 0;
+        width: 100px;
+    }
+
+    .Classes .card h4 {
+        font-size: 20px;
+        padding: 2rem 1.5rem;
+    }
+
+    .Classes button {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .classes-wrapper .carousel-card {
+        width: calc(100% - 1rem);
+    }
+}

@@ -1,0 +1,173 @@
+.Footer {
+    background-color: #1f1e45;
+    padding: 3rem;
+    color: white;
+    text-align: start;
+}
+
+.Footer p,
+.Footer a {
+    color: #5b5b7f;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.footer-wrapper {
+    width: 1600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.about-logo,
+.links,
+.contact-us,
+.follow {
+    width: 33%;
+    margin: 0 3rem;
+}
+
+.underline {
+    border-bottom: 2px solid white;
+    width: 150px;
+    margin-top: 1rem;
+}
+
+.logo-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.about-logo img {
+    border-radius: 50%;
+    margin-right: 1rem;
+    filter: saturate(.5);
+}
+
+.about-logo p {
+    line-height: 20px;
+}
+
+.links ul {
+    padding: 0;
+}
+
+.links li {
+    list-style-type: none;
+    margin: .5rem 0;
+}
+
+.contact-us ul {
+    padding: 0;
+}
+
+.contact-us li {
+    list-style-type: none;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-us li svg {
+    margin-right: 1rem;
+}
+
+.ml-embedded #mlb2-9846689.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+#mlb2-9846689.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+    padding: 20px 0 0 0;
+}
+
+.ml-embedded input {
+    border: 0 !important;
+    border-bottom: 1px solid white !important;
+    border-radius: 0 !important;
+    padding: .65rem 0 !important;
+    background-color: transparent !important;
+}
+
+.ml-embedded input::placeholder {
+    color: white !important;
+}
+
+.ml-embedded button {
+    color: white !important;
+    background: #1CD8D2 !important;
+    background: linear-gradient(to right, #93EDC7, #1CD8D2) !important;
+}
+
+@media (max-width: 1601px) {
+    .Footer {
+        padding: 3rem 0;
+    }
+
+    .footer-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .footer-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .about-logo {
+        order: 3;
+        width: 100%;
+    }
+
+    .contact-us {
+        order: 1;
+        width: calc(50% - 6rem);
+    }
+
+    .links {
+        order: 2;
+        width: calc(50% - 6rem);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .about-logo {
+        order: 3;
+        width: 100%;
+    }
+
+    .contact-us {
+        order: 1;
+        width: 100%;
+    }
+
+    .links {
+        order: 2;
+        width: 100%;
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .logo-info {
+        flex-direction: column;
+    }
+
+    .about-logo img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .about-logo,
+    .links,
+    .contact-us,
+    .follow {
+        margin: 0 1rem;
+    }
+
+    .about-logo {
+        order: 1;
+    }
+
+    .contact-us {
+        order: 3;
+    }
+
+}

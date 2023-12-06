@@ -1,0 +1,145 @@
+.Hero {
+    background-image: url('../../assets/wave-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 6rem;
+}
+
+.sphere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #1CD8D2;
+    background: linear-gradient(to right, #07082a, #0a0c41);
+    box-shadow: 5px -5px 20px #00000024;
+}
+
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.hero-left,
+.hero-right {
+    width: 50%;
+    position: relative;
+}
+
+.hero-left h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.hero-left .scissors {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inner-hero-right {
+    position: relative;
+    padding: .25rem;
+    background: #1CD8D2;
+    background: linear-gradient(to right, #93EDC7, #1CD8D2);
+    border-radius: 50%;
+}
+
+.inner-hero-right .trimmers {
+    position: absolute;
+    top: 0;
+}
+
+.inner-hero-right .straightener {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.inner-hero-right .SlideShow img {
+    border-radius: 50%;
+    width: 600px;
+}
+
+.enroll-now {
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    bottom: 0;
+}
+
+.enroll-now h5 {
+    margin: 0 0 1rem 0;
+    color: #07082a;
+}
+
+@media (max-width: 1500px) {
+    .inner-hero-right .SlideShow img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-left h1 {
+        font-size: 55px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Hero {
+        padding: 6rem 2rem;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-right {
+        justify-content: center;
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .Hero {
+        padding: 6rem 1rem;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .sphere {
+        width: 250px;
+        height: 250px;
+    }
+
+    .trimmers,
+    .straightener {
+        width: 100px !important;
+    }
+
+    .enroll-now {
+        bottom: -50px;
+    }
+}

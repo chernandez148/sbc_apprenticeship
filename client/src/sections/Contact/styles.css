@@ -1,0 +1,112 @@
+.Contact {
+    display: flex;
+    justify-content: center;
+    padding: 0 6rem;
+    background-size: contain;
+    background-position: center;
+}
+
+.Contact img {
+    position: absolute;
+    left: -50px;
+    top: -45px;
+}
+
+.contact-wrapper {
+    position: relative;
+    width: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #1CD8D2;
+    background: linear-gradient(to right, #93EDC7, #1CD8D2);
+    border-radius: 12px;
+}
+
+.inner-wrapper {
+    background-image: url('../../assets/contact-bg.png');
+    background-size: cover;
+    display: flex;
+    padding: 2rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper h3:nth-child(2) {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    background: white;
+    color: #4bd8d3;
+    border-radius: 50%;
+}
+
+.email h3,
+.email h2,
+.phone h3,
+.phone h2 {
+    margin: 0;
+}
+
+.email h3,
+.phone h3 {
+    font-weight: 500;
+}
+
+.email {
+    flex: .4;
+    text-align: right;
+}
+
+.phone {
+    flex: .4;
+    text-align: left;
+}
+
+.trigger-text {
+    color: #4b4a81;
+    text-decoration: underline;
+    transition: color .5s ease-in-out;
+}
+
+.trigger-text:hover {
+    color: #06052e;
+    cursor: pointer;
+}
+
+@media (max-width: 999px) {
+    .Contact {
+        padding: 0 2rem;
+    }
+
+    .contact-wrapper {
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 599px) {
+    .Contact {
+        padding: 0 1rem;
+    }
+
+    .contact-wrapper {
+        padding: 1.5rem 0;
+    }
+
+    .inner-wrapper {
+        flex-direction: column;
+    }
+
+    .email,
+    .phone {
+        text-align: center;
+    }
+
+    .Contact img {
+        left: 0px;
+    }
+}

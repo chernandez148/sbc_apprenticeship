@@ -1,0 +1,103 @@
+.About {
+    padding: 6rem;
+}
+
+.about-wrapper {
+    display: flex;
+}
+
+.about-left,
+.about-right {
+    width: 50%;
+}
+
+.about-left {
+    background-image: url('../../assets/dots.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.about-left img {
+    width: 500px;
+    border-radius: 5px;
+}
+
+.about-right {
+    padding: 0 3rem;
+    position: relative;
+}
+
+.about-right h4 {
+    margin: 0;
+}
+
+.about-right p {
+    line-height: 26px;
+}
+
+.about-right .rotating {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    opacity: .3;
+}
+
+@media (max-width: 1800px) {
+
+    .about-left {
+        background-size: cover;
+    }
+
+    .about-left img {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .about-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .about-left {
+        background-size: contain;
+    }
+
+    .about-left,
+    .about-right {
+        width: 100%;
+    }
+
+    .about-right {
+        padding: 0 0 3rem 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .About {
+        padding: 6rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .About {
+        padding: 3rem 1rem;
+    }
+
+    .about-left img {
+        width: 100%;
+    }
+
+    .about-right .rotating-circle {
+        width: 150px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .snd-paragraph {
+        display: none;
+    }
+
+}
