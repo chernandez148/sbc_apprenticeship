@@ -1,8 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
-import barberClass from "../../assets/barber-class.jpg";
-import razorBlade from "../../assets/razor-blade.png";
-import cosmetologyClass from "../../assets/cosmetology-class.jpg";
+import mensHaircuts from "../../assets/mens-haircuts.jpg";
+import trimmer from "../../assets/trimmers.png";
+import womensHaircuts from "../../assets/womens-haircuts.jpg";
 import hairDryer from "../../assets/hair-dryer.png";
+import mensHairstyling from '../../assets/mens-hair-styling.jpg'
+import scissorsIcon from '../../assets/scissors-icon.png'
+import womensHairstyling from '../../assets/womens-hairstyling.jpg'
+import curlingIron from '../../assets/curling-iron.png'
+import shaving from '../../assets/shaving.png'
+import razorBlade from '../../assets/razor-blade.png'
+import chemicalStraightning from '../../assets/chemical-straightning.jpg'
+import straightener from '../../assets/straightener.png'
+import hairColoring from '../../assets/hair-coloring.jpg'
+import hairDyeBrush from '../../assets/hair-dye-brush.png'
+import manicure from '../../assets/manicure.jpg'
+import nailPolish from '../../assets/nail-polish.png'
+import facial from '../../assets/facial.jpg'
+import facialCream from '../../assets/facial-cream.png'
 import scissors from "../../assets/scissors.png";
 import Card from "../../components/Card/Card";
 import "./styles.css";
@@ -16,74 +30,67 @@ function Classes() {
 
   const classes = [
     {
-      backgroundImage: barberClass,
-      img: barberClass,
-      title: "Barber Class",
-      logo: razorBlade,
-      alt: "Barber Class",
+      backgroundImage: mensHaircuts,
+      img: mensHaircuts,
+      title: "Men's Hair Cuts",
+      logo: trimmer,
+      alt: "haircuts",
     },
     {
-      backgroundImage: cosmetologyClass,
-      img: cosmetologyClass,
-      title: "Cosmetology Class",
+      backgroundImage: womensHaircuts,
+      img: womensHaircuts,
+      title: "Women's Hair Cuts",
       logo: hairDryer,
-      alt: "Cosmetology Class",
+      alt: "haircuts",
     },
     {
-      backgroundImage: barberClass,
-      img: barberClass,
-      title: "Barber Class",
+      backgroundImage: mensHairstyling,
+      img: mensHairstyling,
+      title: "Mens's Hair Styling",
+      logo: scissorsIcon,
+      alt: "styling",
+    },
+    {
+      backgroundImage: womensHairstyling,
+      img: womensHairstyling,
+      title: "Women's Hair Styling",
+      logo: curlingIron,
+      alt: "styling",
+    },
+    {
+      backgroundImage: shaving,
+      img: shaving,
+      title: "Men's Shave",
       logo: razorBlade,
-      alt: "Barber Class",
+      alt: "shaving",
     },
     {
-      backgroundImage: cosmetologyClass,
-      img: cosmetologyClass,
-      title: "Cosmetology Class",
-      logo: hairDryer,
-      alt: "Cosmetology Class",
+      backgroundImage: chemicalStraightning,
+      img: chemicalStraightning,
+      title: "Permanent Waving & Chemical Straightening",
+      logo: straightener,
+      alt: "hair straightning",
     },
     {
-      backgroundImage: barberClass,
-      img: barberClass,
-      title: "Barber Class",
-      logo: razorBlade,
-      alt: "Barber Class",
+      backgroundImage: hairColoring,
+      img: hairColoring,
+      title: "Hair Coloring & Bleaching",
+      logo: hairDyeBrush,
+      alt: "hair coloring an dbleaching",
     },
     {
-      backgroundImage: cosmetologyClass,
-      img: cosmetologyClass,
-      title: "Cosmetology Class",
-      logo: hairDryer,
-      alt: "Cosmetology Class",
+      backgroundImage: manicure,
+      img: manicure,
+      title: "Manicuring & Pedicuring",
+      logo: nailPolish,
+      alt: "Manicuring and Pedicuring",
     },
     {
-      backgroundImage: barberClass,
-      img: barberClass,
-      title: "Barber Class",
-      logo: razorBlade,
-      alt: "Barber Class",
-    },
-    {
-      backgroundImage: cosmetologyClass,
-      img: cosmetologyClass,
-      title: "Cosmetology Class",
-      logo: hairDryer,
-      alt: "Cosmetology Class",
-    },
-    {
-      backgroundImage: barberClass,
-      img: barberClass,
-      title: "Barber Class",
-      logo: razorBlade,
-      alt: "Barber Class",
-    },
-    {
-      backgroundImage: cosmetologyClass,
-      img: cosmetologyClass,
-      title: "Cosmetology Class",
-      logo: hairDryer,
-      alt: "Cosmetology Class",
+      backgroundImage: facial,
+      img: facial,
+      title: "Manual, Electrical & Chemical Facials",
+      logo: facialCream,
+      alt: "Manual, Electrical and Chemical Facials",
     },
   ];
 
@@ -158,6 +165,8 @@ function Classes() {
   return (
     <div className="Classes">
       <img className="scissors floating" src={scissors} alt="scissors" />
+      <h4>HANDS ON TRAINING</h4>
+      <h1>What You'll <span className="accent">Learn</span></h1>
       <div className="classes-wrapper">
         <div className="carousel">
           {classes.map((card, index) => (

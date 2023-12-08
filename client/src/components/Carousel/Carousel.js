@@ -11,6 +11,8 @@ const Carousel = ({ children }) => {
   const itemWidth = 100 / itemsVisible;
   const totalWidth = currentIndex * itemWidth;
 
+  console.log(windowWidth)
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);

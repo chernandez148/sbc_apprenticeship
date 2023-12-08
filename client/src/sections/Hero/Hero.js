@@ -1,17 +1,20 @@
 import "./styles.css";
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../components/Button/Button";
 import SlideShow from "../../components/SlideShow/SlideShow";
 import trimmers from "../../assets/trimmers.png";
 import straightener from "../../assets/straightener.png";
 import graduateOne from "../../assets/graduate-1.jpg";
 import graduateTwo from "../../assets/graduate-2.jpg";
-import EnrollmentForm from "../../components/EnrollmentForm/EnrollmentForm";
+import logo from '../../assets/transparent-logo3.jpg'
+import wave from '../../assets/wave-bg.png'
+import { FaPlay } from "react-icons/fa";
 
-function Hero({ enrollmentForm, setEnrollmentForm }) {
-  const handleEnrollmentForm = () => {
-    setEnrollmentForm(true);
-  };
+function Hero({ handleEnrollmentForm, darkMode }) {
+
+  const handleVideo = () => {
+    window.open("https://www.youtube.com/watch?v=FABuKJfd2sc")
+  }
 
   const gallery = [
     {
@@ -26,15 +29,15 @@ function Hero({ enrollmentForm, setEnrollmentForm }) {
 
   return (
     <div className="Hero">
-      <div className="sphere"></div>
+      {/* <div className={`sphere ${darkMode ? "dark-sphere" : "light-sphere"}`}></div> */}
       <div className="hero-wrapper">
         <div className="hero-left">
           <h1>San Bernardino Cuts and Cosmetology Institute</h1>
           <p>Cultivating the next generation of beauty industry leaders.</p>
-          <Button onClick={handleEnrollmentForm} text="Learn More" />
+          <Button onClick={handleEnrollmentForm} darkMode={darkMode} text="Enrol Now!" />
         </div>
         <div className="hero-right">
-          <div className="inner-hero-right">
+          <div className={`inner-hero-right ${darkMode ? "" : "dark-bg"}`}>
             <img
               className="straightener floating"
               src={straightener}
@@ -48,20 +51,16 @@ function Hero({ enrollmentForm, setEnrollmentForm }) {
               width="150px"
               alt="trimmer"
             />
-            <div className="enroll-now">
-              <h5>Open Enrollment!</h5>
+            <div className="enroll-now spinning">
               <Button
-                onClick={handleEnrollmentForm}
-                setEnrollmentForm={setEnrollmentForm}
-                text="Enroll Now"
+                darkMode={darkMode}
+                onClick={handleVideo}
+                text={<FaPlay />}
               />
             </div>
           </div>
         </div>
       </div>
-      {enrollmentForm && (
-        <EnrollmentForm setEnrollmentForm={setEnrollmentForm} />
-      )}
     </div>
   );
 }

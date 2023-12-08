@@ -1,5 +1,5 @@
 import React from 'react'
-import owners from '../../assets/owners.jpg'
+import about from '../../assets/about.jpg'
 import Button from '../../components/Button/Button'
 import rotatingCircle from '../../assets/rotating-dots.png'
 import './styles.css'
@@ -9,7 +9,7 @@ function About() {
         <div className='About'>
             <div className='about-wrapper'>
                 <div className='about-left'>
-                    <img src={owners} alt='owners' />
+                    <img src={about} alt='owners' />
                 </div>
                 <div className='about-right'>
                     <h4>ABOUT US</h4>
@@ -20,7 +20,7 @@ function About() {
                     <p className='snd-paragraph'>
                         At SBCutsB&C Institute, we offer a comprehensive educational and training program that covers a wide range of services commonly requested by clients in professional barbershops and salons. Our commitment is to provide you with the most current and cutting-edge methods and techniques in the industry.
                     </p>
-                    <Button text="Learn more" />
+                    <a href='tel:+19093840792'>Call now</a>
                     <img className='rotating rotating-circle' src={rotatingCircle} alt='rotating dots' />
                 </div>
             </div>

@@ -1,9 +1,34 @@
 .App {
+    margin: 0;
+    padding: 0;
+}
+
+.dark-bg {
     background: #030032;
     background: linear-gradient(333deg, rgba(3, 0, 50, 1) 0%, rgba(7, 7, 43, 1) 35%, rgba(5, 10, 41, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030032", endColorstr="#050a29", GradientType=1);
-    margin: 0;
-    padding: 0;
+}
+
+.light-bg {
+    background: #ffffff;
+    background: linear-gradient(333deg, #ffffff, #f3f3f3 35%, #ffffff);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#030032", endColorstr="#050a29", GradientType=1);
+}
+
+.App .dark-mode {
+    background-color: transparent;
+    position: absolute;
+    padding: 1rem;
+    right: 0;
+    border: 0;
+}
+
+.light-text {
+    color: white;
+}
+
+.dark-text {
+    color: #050929;
 }
 
 .app-wrapper {

@@ -8,6 +8,11 @@ import "./styles.css";
 function Testimonials() {
   const [reviewData, setReviewData] = useState([]);
   const [error, setError] = useState("");
+
+  const navigateToPage = () => {
+    window.open('https://www.yelp.com/biz/san-bernardino-cuts-apprenticeship-san-bernardino');
+  };
+
   const options = {
     headers: {
       accept: "application/json",
@@ -37,7 +42,7 @@ function Testimonials() {
             Hear directly from our students about their transformative
             experiences and success stories at our academy.
           </p>
-          <Button text="Get-Pre Approved Now!" />
+          <Button text="Don't forget to leave a review!" onClick={navigateToPage} />
         </div>
         <div className="testimonials-right">
           <Carousel>

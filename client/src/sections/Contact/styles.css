@@ -66,13 +66,15 @@
     text-align: left;
 }
 
-.trigger-text {
+.trigger-text,
+.phone a {
     color: #4b4a81;
     text-decoration: underline;
     transition: color .5s ease-in-out;
 }
 
-.trigger-text:hover {
+.trigger-text:hover,
+.phone a:hover {
     color: #06052e;
     cursor: pointer;
 }

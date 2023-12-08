@@ -7,9 +7,16 @@ import Testimonials from '../../sections/Testimonials/Testimonials'
 import Contact from '../../sections/Contact/Contact'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import Banner from '../../sections/Banner/Banner'
+import EnrollmentForm from '../../components/EnrollmentForm/EnrollmentForm'
 
-function Home({ enrollmentForm, setEnrollmentForm }) {
+function Home({ enrollmentForm, setEnrollmentForm, darkMode }) {
     const [contactForm, setContactForm] = useState(false)
+
+    const handleEnrollmentForm = () => {
+        setEnrollmentForm(true);
+    };
+
+    console.log(enrollmentForm)
 
     return (
         <div>
@@ -18,13 +25,18 @@ function Home({ enrollmentForm, setEnrollmentForm }) {
                     <ContactForm setContactForm={setContactForm} />
                 )
             }
-            <Hero enrollmentForm={enrollmentForm} setEnrollmentForm={setEnrollmentForm} />
+            {
+                enrollmentForm && (
+                    <EnrollmentForm setEnrollmentForm={setEnrollmentForm} />
+                )
+            }
+            <Hero enrollmentForm={enrollmentForm} setEnrollmentForm={setEnrollmentForm} handleEnrollmentForm={handleEnrollmentForm} darkMode={darkMode} />
             <Highlights />
             <About />
             <Classes />
             <Testimonials />
             <Contact setContactForm={setContactForm} />
-            <Banner />
+            <Banner setEnrollmentForm={setEnrollmentForm} handleEnrollmentForm={handleEnrollmentForm} />
         </div>
     )
 }

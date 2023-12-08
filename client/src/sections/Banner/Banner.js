@@ -1,9 +1,10 @@
 import React from 'react'
 import enroll from '../../assets/enroll.jpg'
 import blob from '../../assets/blob.png'
+import Button from '../../components/Button/Button'
 import './styles.css'
 
-function Banner() {
+function Banner({ handleEnrollmentForm }) {
     return (
         <div className='Banner'>
             <div className='banner-wrapper'>
@@ -12,7 +13,10 @@ function Banner() {
                         <div className='inner-left-banner'>
                             <h2>Start your career</h2>
                             <h1>Enroll Now <br /> to Save Your Spot</h1>
-                            <button>Get Pre-Approved</button>
+                            <Button
+                                onClick={handleEnrollmentForm}
+                                text="Get Pre-Approved Now!"
+                            />
                         </div>
                     </div>
                     <div className='banner-right'>

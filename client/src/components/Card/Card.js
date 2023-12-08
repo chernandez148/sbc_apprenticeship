@@ -30,7 +30,7 @@ function Card({
       <div className="content">
         <h4>{title}</h4>
         <p>{desc}</p>
-        <a onClick={() => handleIndex(index)}>Learn More</a>
+        <p onClick={() => handleIndex(index)}>Learn More</p>
       </div>
     </div>
   );

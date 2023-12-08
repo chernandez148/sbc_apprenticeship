@@ -9,6 +9,10 @@ body {
     color: #26d9d2;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 @keyframes float {
 
     0%,
@@ -32,6 +36,34 @@ body {
         transform: rotate(360deg);
     }
 
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverse-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.enroll-now button {
+    animation: reverse-spin 3s linear infinite;
+}
+
+.spinning {
+    animation: spin 3s linear infinite;
 }
 
 .floating {

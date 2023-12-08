@@ -9,7 +9,7 @@ function Footer() {
             <div className='footer-wrapper'>
                 <div className='about-logo'>
                     <div className='logo-info'>
-                        <img src={logo} width="100px" />
+                        <img src={logo} width="100px" alt='logo' />
                         <h3>San Bernardino Cuts Barbering and Cosmetology Institute
                         </h3>
                     </div>
@@ -19,8 +19,8 @@ function Footer() {
                     <h3>Contact Us</h3>
                     <div className='underline'></div>
                     <ul className='contact'>
-                        <li><IoLocationSharp size={24} /><a>182 5th St, San Bernardino, CA 92401</a></li>
-                        <li><IoPhonePortraitOutline size={24} /><a>(909) 384-0792</a></li>
+                        <li><IoLocationSharp /><a href='https://maps.app.goo.gl/3hnDwSVUzLCK3B846'>165 W Hospitality Lane Suite 13-14, San Bernardino, CA 92408</a></li>
+                        <li><IoPhonePortraitOutline size={24} /><a href='tel:+19093840792'>(909) 384-0792</a></li>
                     </ul>
                 </div>
                 <div className='links'>

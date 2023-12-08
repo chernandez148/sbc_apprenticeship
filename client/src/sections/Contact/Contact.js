@@ -11,7 +11,7 @@ function Contact({ setContactForm }) {
     return (
         <div className='Contact'>
             <div className='contact-wrapper'>
-                <img className='floating' src={scissors} width="100px" height="100px" />
+                <img className='floating' src={scissors} width="100px" height="100px" alt='scissors' />
                 <div className='inner-wrapper'>
                     <div className='email'>
                         <h3>Get In Touch:</h3>
@@ -20,7 +20,7 @@ function Contact({ setContactForm }) {
                     <h3>OR</h3>
                     <div className='phone'>
                         <h3>Call Us At:</h3>
-                        <h2>(909) 384-0792</h2>
+                        <h2><a href='tel:+19093840792'>(909) 384-0792</a></h2>
                     </div>
                 </div>
 

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import ReCaptcha from 'react-google-recaptcha'
 import "./styles.css";
 
 function EnrollmentForm({ setEnrollmentForm }) {
+  const [capVal, setCapVal] = useState(null)
+  const [successMessage, setSuccessMessage] = useState("")
+  const [errorMessage, setErrorMessage] = useState("")
+
+  const recaptcha_key = process.env.REACT_APP_RECAPTCHA_KEY;
+
   const handleCloseEnrollmentForm = () => {
     setEnrollmentForm(false);
   };
@@ -16,6 +23,7 @@ function EnrollmentForm({ setEnrollmentForm }) {
       .string()
       .email("Email is not valid")
       .required("Email is required"),
+    phone_number: yup.string().required("Phone number is required"),
     dob: yup.date().required("Date of Birth is required"),
     age_restriction: yup
       .string()
@@ -28,12 +36,10 @@ function EnrollmentForm({ setEnrollmentForm }) {
       .oneOf(["yes", "no"])
       .required("Required field."),
     orientation: yup.string().oneOf(["yes", "no"]).required("Required field."),
-    upload_id: yup
-      .mixed()
-      .required("A file is required")
-      .test("fileSize", "File size is too large", (value) => {
-        return value && value.size <= 1024 * 1024 * 2; // 2MB maximum file size
-      }),
+    certification: yup
+      .boolean()
+      .required("Certification is required")
+      .oneOf([true], "You must certify that the information is true and accurate"),
   });
 
   // Define initial values
@@ -41,23 +47,52 @@ function EnrollmentForm({ setEnrollmentForm }) {
     first_name: "",
     last_name: "",
     email: "",
+    phone_number: "",
     dob: "",
-    age_restriction: "", // Default value, you can change it if needed
-    us_status: "", // Default value, you can change it if needed
-    photo_id: "", // Default value, you can change it if needed
-    transportation: "", // Default value, you can change it if needed
-    orientation: "", // Default value, you can change it if needed
-    upload_id: null, // Initialize the file field with null
+    age_restriction: "",
+    us_status: "",
+    photo_id: "",
+    transportation: "",
+    orientation: "",
+    certification: false
   };
 
   // Define the submit function
-  const handleSubmit = (values) => {
-    // Handle form submission here
-    console.log(values);
-    formik.resetForm();
-    setEnrollmentForm(false);
-    // You can send the form data to your server or perform any other actions
+  const handleSubmit = async (values) => {
+    try {
+      const response = await fetch("https://app.sbcapprenticeship.com/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+
+      if (response.ok) {
+        // Handle success (e.g., show a success message)
+        setSuccessMessage("Email sent successfully, we will reply back you you soon.");
+
+        setTimeout(() => {
+          setSuccessMessage("");
+          setEnrollmentForm(false)
+        }, 2500);
+
+      } else {
+        // Handle errors (e.g., show an error message)
+        setErrorMessage("Error sending email, please try again.");
+
+        setTimeout(() => {
+          setErrorMessage("");
+          setEnrollmentForm(false)
+        }, 2500);
+      }
+    } catch (error) {
+      // Handle fetch request errors
+      console.error("Error sending email:", error);
+    }
   };
+
 
   // Create a Formik instance
   const formik = useFormik({
@@ -119,6 +154,20 @@ function EnrollmentForm({ setEnrollmentForm }) {
             ) : null}
           </div>
           <div className="input-field">
+            <label htmlFor="phone_number">Phone Number</label>
+            <input
+              type="text"
+              id="phone_number"
+              name="phone_number"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.phone_number}
+            />
+            {formik.touched.phone_number && formik.errors.phone_number ? (
+              <div className="error">{formik.errors.phone_number}</div>
+            ) : null}
+          </div>
+          <div className="input-field">
             <label htmlFor="dob">Birth Date</label>
             <input
               type="date"
@@ -157,6 +206,9 @@ function EnrollmentForm({ setEnrollmentForm }) {
                 />
                 <label htmlFor="age_restriction_no">No</label>
               </div>
+              {formik.touched.age_restriction && formik.errors.age_restriction ? (
+                <div className="error">{formik.errors.age_restriction}</div>
+              ) : null}
             </div>
           </div>
           <div className="input-field">
@@ -275,27 +327,46 @@ function EnrollmentForm({ setEnrollmentForm }) {
               />
               <label htmlFor="orientation_no">No</label>
             </div>
-          </div>
-
-          <div className="input-field">
-            <label htmlFor="upload_id">Upload ID</label>
-            <input
-              type="file"
-              id="upload_id"
-              name="upload_id"
-              onChange={(event) =>
-                formik.setFieldValue("upload_id", event.target.files[0])
-              }
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.upload_id && formik.errors.upload_id ? (
-              <div className="error">{formik.errors.upload_id}</div>
+            {formik.touched.orientation && formik.errors.orientation ? (
+              <div className="error">{formik.errors.orientation}</div>
             ) : null}
           </div>
-
-          <button type="submit">Submit</button>
+          <div className="checkbox-field">
+            <input
+              type="checkbox"
+              id="certification"
+              name="certification"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              checked={formik.values.certification}
+            />
+            <label htmlFor="certification">
+              I hereby certify that, to the best of my knowledge, the provided
+              information is true and accurate.
+            </label>
+            {formik.touched.certification && formik.errors.certification ? (
+              <div className="error">{formik.errors.certification}</div>
+            ) : null}
+          </div>
+          <ReCaptcha
+            sitekey={recaptcha_key}
+            onChange={(val) => setCapVal(val)}
+          />
+          {successMessage && (
+            <div className='toast'>
+              <p style={{ color: "green" }}>{successMessage}</p>
+            </div>
+          )}
+          {errorMessage && (
+            <div className='toast'>
+              <p style={{ color: "red" }}>{errorMessage}</p>
+            </div>
+          )}
+          <div className="button-wrapper">
+            <Button disabled={!capVal} type="submit" text="Submit" />
+            <Button text="Close" onClick={handleCloseEnrollmentForm} />
+          </div>
         </form>
-        <Button text="Close" onClick={handleCloseEnrollmentForm} />
       </div>
     </div>
   );

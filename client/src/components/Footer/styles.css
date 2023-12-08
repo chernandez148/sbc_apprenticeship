@@ -68,6 +68,10 @@
     align-items: center;
 }
 
+.contact-us li a {
+    text-decoration: none;
+}
+
 .contact-us li svg {
     margin-right: 1rem;
 }

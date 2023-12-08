@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import { IoLocationSharp, IoPhonePortraitOutline } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import ReCaptcha from 'react-google-recaptcha'
 import './styles.css'
 
 function ContactForm({ setContactForm }) {
+    const [capVal, setCapVal] = useState(null)
+    const [successMessage, setSuccessMessage] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
+
+    const recaptcha_key = process.env.REACT_APP_RECAPTCHA_KEY;
 
     const handleCloseForm = () => {
         setContactForm(false)
@@ -28,7 +34,7 @@ function ContactForm({ setContactForm }) {
         validationSchema: formSchema,
         onSubmit: async (values, { resetForm }) => {
             try {
-                const response = await fetch("/send-email", {
+                const response = await fetch("https://app.sbcapprenticeship.com/send-email", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -36,12 +42,24 @@ function ContactForm({ setContactForm }) {
                     body: JSON.stringify(values),
                 });
 
+
                 if (response.ok) {
                     // Handle success (e.g., show a success message)
-                    console.log("Email sent successfully");
+                    setSuccessMessage("Email sent successfully, we will reply back you you soon.");
+
+                    setTimeout(() => {
+                        setSuccessMessage("");
+                        setContactForm(false)
+                    }, 2500);
+
                 } else {
                     // Handle errors (e.g., show an error message)
-                    console.error("Error sending email");
+                    setErrorMessage("Error sending email, please try again.");
+
+                    setTimeout(() => {
+                        setErrorMessage("");
+                        setContactForm(false)
+                    }, 2500);
                 }
             } catch (error) {
                 // Handle fetch request errors
@@ -102,7 +120,11 @@ function ContactForm({ setContactForm }) {
                         {formik.touched.message && formik.errors.message ? (
                             <div className="error">{formik.errors.message}</div>
                         ) : null}
-                        <button type="submit">Submit</button>
+                        <ReCaptcha
+                            sitekey={recaptcha_key}
+                            onChange={(val) => setCapVal(val)}
+                        />
+                        <button disabled={!capVal} type="submit">Submit</button>
                     </form>
                 </div>
                 <div className='contact-form-right'>
@@ -110,18 +132,28 @@ function ContactForm({ setContactForm }) {
                         <h2>Contact us</h2>
                         <p>Have any questions about enrollment?</p>
                         <ul className='contact'>
-                            <li><IoLocationSharp /><a>182 5th St, San Bernardino, CA 92401</a></li>
-                            <li><IoPhonePortraitOutline /><a>(909) 384-0792</a></li>
+                            <li><IoLocationSharp /><a href='https://maps.app.goo.gl/3hnDwSVUzLCK3B846'>165 W Hospitality Lane Suite 13-14, San Bernardino, CA 92408</a></li>
+                            <li><IoPhonePortraitOutline /><a href='tel:+19093840792'>(909) 384-0792</a></li>
                         </ul>
                         <h2>Or follow us</h2>
                         <ul className='follow'>
-                            <li><FaFacebookF size={24} /></li>
-                            <li><FaTwitter size={24} /></li>
-                            <li><FaInstagram size={24} /></li>
+                            <li><a href='https://www.facebook.com/sbcapprenticeship/'><FaFacebookF size={24} /></a></li>
+                            <li><a href='https://twitter.com/i/flow/login?redirect_after_login=%2Fcuts_san'><FaTwitter size={24} /></a></li>
+                            <li><a href='https://www.instagram.com/sbcapprenticeship/?hl=en'><FaInstagram size={24} /></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+            {successMessage && (
+                <div className='toast'>
+                    <p style={{ color: "green" }}>{successMessage}</p>
+                </div>
+            )}
+            {errorMessage && (
+                <div className='toast'>
+                    <p style={{ color: "red" }}>{errorMessage}</p>
+                </div>
+            )}
         </div>
     )
 }

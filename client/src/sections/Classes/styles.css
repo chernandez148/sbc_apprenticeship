@@ -143,6 +143,15 @@
     border-radius: 0;
 }
 
+.Classes .carousel-card:nth-child(4) img {
+    width: 170px !important;
+}
+
+.Classes .carousel-card:nth-child(6) img,
+.Classes .carousel-card:nth-child(7) img {
+    width: 200px !important;
+}
+
 .Classes .card img:nth-child(2) {
     position: absolute;
     z-index: 1;
