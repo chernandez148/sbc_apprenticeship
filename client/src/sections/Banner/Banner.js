@@ -21,8 +21,8 @@ function Banner({ handleEnrollmentForm }) {
                     </div>
                     <div className='banner-right'>
                         <div className='blob'>
-                            <img className='blob-img floating' src={blob} width="500px" />
-                            <img className='banner-img' src={enroll} />
+                            <img className='blob-img floating' src={blob} width="500px" alt='blob' />
+                            <img className='banner-img' src={enroll} alt='banner' />
                         </div>
                     </div>
                 </div>

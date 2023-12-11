@@ -1,15 +1,26 @@
 .Testimonials {
-    margin: 6rem;
-    padding: 1rem;
-    background-color: white;
+    padding: 6rem;
     color: #1a1a49;
+    position: relative;
+}
+
+.dots-bg {
+    position: absolute;
+    width: 500px;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .testimonials-wrapper {
     display: flex;
-    width: 95%;
+    width: calc(100% - 8rem);
     margin: 0 auto;
     align-items: center;
+    background: white;
+    padding: 2rem 4rem;
+    position: relative;
+    z-index: 2;
 }
 
 .testimonials-left {
@@ -69,7 +80,7 @@
 
 @media (max-width: 1000px) {
     .Testimonials {
-        margin: 6rem 2rem;
+        padding: 6rem 2rem;
     }
 }
 
@@ -86,12 +97,21 @@
 
 @media (max-width: 600px) {
     .Testimonials {
-        margin: 3rem 1rem;
+        padding: 3rem 1rem;
     }
-}
 
-@media (max-width: 499px) {
     .testimonials-wrapper {
-        width: 90%;
+        display: flex;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        align-items: center;
+        background: white;
+        padding: 2rem 1rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .dots-bg {
+        width: 100%;
     }
 }

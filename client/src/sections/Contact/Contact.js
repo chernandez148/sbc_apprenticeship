@@ -20,7 +20,7 @@ function Contact({ setContactForm }) {
                     <h3>OR</h3>
                     <div className='phone'>
                         <h3>Call Us At:</h3>
-                        <h2><a href='tel:+19093840792'>(909) 384-0792</a></h2>
+                        <h2><a href='tel:+19095324644'>(909) 532-4644</a></h2>
                     </div>
                 </div>
 

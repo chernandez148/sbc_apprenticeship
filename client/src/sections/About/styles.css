@@ -1,5 +1,9 @@
 .About {
     padding: 6rem;
+    background-image: url('../../assets/transparent-logo3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .about-wrapper {
@@ -12,7 +16,6 @@
 }
 
 .about-left {
-    background-image: url('../../assets/dots.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
@@ -36,21 +39,11 @@
     line-height: 26px;
 }
 
-.about-right .rotating {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    opacity: .3;
-}
-
 .About .snd-paragraph {
     margin-bottom: 2rem;
 }
 
 .About a {
-    background: #1CD8D2;
-    background: linear-gradient(to right, #93EDC7, #1CD8D2);
     color: white;
     padding: .75rem 1.75rem;
     border-radius: 5px;
@@ -60,6 +53,16 @@
     z-index: 1;
     text-decoration: none;
     margin-top: 1rem;
+}
+
+.dark-link {
+    background: #1CD8D2;
+    background: linear-gradient(to right, #93EDC7, #1CD8D2);
+}
+
+.light-link {
+    background: #000f5f;
+    background: linear-gradient(to right, #010093, #000f5f);
 }
 
 @media (max-width: 1800px) {
@@ -74,6 +77,10 @@
 }
 
 @media (max-width: 1200px) {
+    .About {
+        background-size: contain;
+    }
+
     .about-wrapper {
         display: flex;
         flex-direction: column-reverse;

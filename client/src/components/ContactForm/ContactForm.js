@@ -34,7 +34,7 @@ function ContactForm({ setContactForm }) {
         validationSchema: formSchema,
         onSubmit: async (values, { resetForm }) => {
             try {
-                const response = await fetch("https://app.sbcapprenticeship.com/send-email", {
+                const response = await fetch("https://app.sbcapprenticeship.com/api/contact-form", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -133,7 +133,7 @@ function ContactForm({ setContactForm }) {
                         <p>Have any questions about enrollment?</p>
                         <ul className='contact'>
                             <li><IoLocationSharp /><a href='https://maps.app.goo.gl/3hnDwSVUzLCK3B846'>165 W Hospitality Lane Suite 13-14, San Bernardino, CA 92408</a></li>
-                            <li><IoPhonePortraitOutline /><a href='tel:+19093840792'>(909) 384-0792</a></li>
+                            <li><IoPhonePortraitOutline /><a href='tel:+19095324644'>(909) 532-4644</a></li>
                         </ul>
                         <h2>Or follow us</h2>
                         <ul className='follow'>

@@ -8,7 +8,6 @@ import "./styles.css";
 function EnrollmentForm({ setEnrollmentForm }) {
   const [capVal, setCapVal] = useState(null)
   const [successMessage, setSuccessMessage] = useState("")
-  const [errorMessage, setErrorMessage] = useState("")
 
   const recaptcha_key = process.env.REACT_APP_RECAPTCHA_KEY;
 
@@ -40,6 +39,7 @@ function EnrollmentForm({ setEnrollmentForm }) {
       .boolean()
       .required("Certification is required")
       .oneOf([true], "You must certify that the information is true and accurate"),
+
   });
 
   // Define initial values
@@ -60,7 +60,7 @@ function EnrollmentForm({ setEnrollmentForm }) {
   // Define the submit function
   const handleSubmit = async (values) => {
     try {
-      const response = await fetch("https://app.sbcapprenticeship.com/submit-form", {
+      const response = await fetch("https://app.sbcapprenticeship.com/api/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,14 +78,6 @@ function EnrollmentForm({ setEnrollmentForm }) {
           setEnrollmentForm(false)
         }, 2500);
 
-      } else {
-        // Handle errors (e.g., show an error message)
-        setErrorMessage("Error sending email, please try again.");
-
-        setTimeout(() => {
-          setErrorMessage("");
-          setEnrollmentForm(false)
-        }, 2500);
       }
     } catch (error) {
       // Handle fetch request errors
@@ -355,11 +347,6 @@ function EnrollmentForm({ setEnrollmentForm }) {
           {successMessage && (
             <div className='toast'>
               <p style={{ color: "green" }}>{successMessage}</p>
-            </div>
-          )}
-          {errorMessage && (
-            <div className='toast'>
-              <p style={{ color: "red" }}>{errorMessage}</p>
             </div>
           )}
           <div className="button-wrapper">

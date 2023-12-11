@@ -31,10 +31,10 @@ function Home({ enrollmentForm, setEnrollmentForm, darkMode }) {
                 )
             }
             <Hero enrollmentForm={enrollmentForm} setEnrollmentForm={setEnrollmentForm} handleEnrollmentForm={handleEnrollmentForm} darkMode={darkMode} />
-            <Highlights />
-            <About />
-            <Classes />
-            <Testimonials />
+            <Highlights darkMode={darkMode} />
+            <About darkMode={darkMode} />
+            <Classes darkMode={darkMode} />
+            <Testimonials darkMode={darkMode} />
             <Contact setContactForm={setContactForm} />
             <Banner setEnrollmentForm={setEnrollmentForm} handleEnrollmentForm={handleEnrollmentForm} />
         </div>

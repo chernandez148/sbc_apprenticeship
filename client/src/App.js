@@ -7,7 +7,7 @@ import './styles.css'
 
 function App() {
   const [enrollmentForm, setEnrollmentForm] = useState(false)
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   const handleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode)

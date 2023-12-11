@@ -6,8 +6,10 @@ import trimmers from "../../assets/trimmers.png";
 import straightener from "../../assets/straightener.png";
 import graduateOne from "../../assets/graduate-1.jpg";
 import graduateTwo from "../../assets/graduate-2.jpg";
-import logo from '../../assets/transparent-logo3.jpg'
-import wave from '../../assets/wave-bg.png'
+import graduateThree from "../../assets/graduate-3.jpg";
+import graduateFour from "../../assets/graduate-4.jpg";
+import graduateFive from "../../assets/graduate-5.jpg";
+import graduateSix from "../../assets/graduate-6.jpg";
 import { FaPlay } from "react-icons/fa";
 
 function Hero({ handleEnrollmentForm, darkMode }) {
@@ -25,6 +27,22 @@ function Hero({ handleEnrollmentForm, darkMode }) {
       image: graduateTwo,
       alt: "graduate",
     },
+    {
+      image: graduateThree,
+      alt: "graduate",
+    },
+    {
+      image: graduateFour,
+      alt: "graduate",
+    },
+    {
+      image: graduateFive,
+      alt: "graduate",
+    },
+    {
+      image: graduateSix,
+      alt: "graduate",
+    },
   ];
 
   return (
@@ -32,7 +50,10 @@ function Hero({ handleEnrollmentForm, darkMode }) {
       {/* <div className={`sphere ${darkMode ? "dark-sphere" : "light-sphere"}`}></div> */}
       <div className="hero-wrapper">
         <div className="hero-left">
-          <h1>San Bernardino Cuts and Cosmetology Institute</h1>
+          <div className="spanish-speaking">
+            <span>Se Habla Español</span>
+          </div>
+          <h1>San Bernardino Cuts Barbering and Cosmetology Institute</h1>
           <p>Cultivating the next generation of beauty industry leaders.</p>
           <Button onClick={handleEnrollmentForm} darkMode={darkMode} text="Enrol Now!" />
         </div>

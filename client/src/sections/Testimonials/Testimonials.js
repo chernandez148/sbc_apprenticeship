@@ -3,11 +3,12 @@ import axios from "axios";
 import Button from "../../components/Button/Button";
 import Carousel from "../../components/Carousel/Carousel";
 import CarouselItem from "../../components/CarouselItem/CarouselItem";
+import dots from '../../assets/dots.png'
+import darkDots from '../../assets/dark-dots.png'
 import "./styles.css";
 
-function Testimonials() {
+function Testimonials({ darkMode }) {
   const [reviewData, setReviewData] = useState([]);
-  const [error, setError] = useState("");
 
   const navigateToPage = () => {
     window.open('https://www.yelp.com/biz/san-bernardino-cuts-apprenticeship-san-bernardino');
@@ -23,18 +24,16 @@ function Testimonials() {
 
   useEffect(() => {
     axios
-      .get("https://app.sbcapprenticeship.com/api/reviews", options)
+      .get("https://app.sbcapprenticeship.com/api/reviews", options, { mode: "cors" })
       .then((response) => {
         setReviewData(response.data);
       })
-      .catch((error) => {
-        setError(error);
-      });
   }, []);
 
   return (
     <div className="Testimonials">
-      <div className="testimonials-wrapper">
+      <img className="dots-bg" src={darkMode ? dots : darkDots} width="100%" alt="background dots" />
+      <div className="testimonials-wrapper" >
         <div className="testimonials-left">
           <h4>TESTIMONIALS</h4>
           <h1>What Our Students Have To Say</h1>
