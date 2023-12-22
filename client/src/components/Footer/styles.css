@@ -32,6 +32,10 @@
     margin-top: 1rem;
 }
 
+.Footer .para-espanol p {
+    margin-left: 0!important;
+}
+
 .logo-info {
     display: flex;
     align-items: center;

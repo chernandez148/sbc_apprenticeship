@@ -8,12 +8,13 @@ import HighlightsInfo from "../../components/HighlightsInfo/HighlightsInfo";
 import Button from "../../components/Button/Button";
 import "./styles.css";
 
-function Highlights({ darkMode }) {
+function Highlights({ darkMode, setHighlightsModelBox }) {
   const [cardIndex, setCardIndex] = useState(null);
 
   const hanldeIndex = (index) => {
-    setCardIndex(index)
-  }
+    setCardIndex(index);
+    setHighlightsModelBox(true);
+  };
 
   const highlights = [
     {
@@ -43,7 +44,7 @@ function Highlights({ darkMode }) {
         "Our institute is pleased to announce a collaboration with FlexxBuy to offer innovative financial aid options to our community. FlexxBuy presents a unique, multi-lender customer financing solution that simplifies the application process, connecting businesses with over 35 lenders to ensure competitive offers for all credit situations. This inclusive approach means businesses receive payment within 24 hours, fostering a risk-free environment. The platform is designed to accommodate a range of financing needs, from a few hundred to $100,000, with interest rates starting at 5.9% and terms extending up to 144 months. Importantly, there are no long-term contracts or cancellation fees, allowing for greater flexibility.",
       second_paragraph:
         "This financial aid program is accessible to businesses of various sizes and stages, whether they are well-established or newly founded, and regardless of their operational setting (store, office, or home-based). By leveraging FlexxBuy's customer financing, businesses can significantly boost their sales, increase average ticket amounts, and enhance customer referrals. The initiative promises a customized, no-risk financial solution tailored to each business's unique needs, streamlining transactions directly at the point-of-sale and enabling customers to buy now and pay later​",
-      link: "https://app.flexxbuy.com/san-bernardino-cuts-apprenticeship-of-barbering-and-cosmetology-academy/apply/"
+      link: "https://app.flexxbuy.com/san-bernardino-cuts-apprenticeship-of-barbering-and-cosmetology-academy/apply/",
     },
     {
       title: "Board-Approved",
@@ -62,13 +63,17 @@ function Highlights({ darkMode }) {
     <div className="Highlights">
       <div className="highlight-wrapper">
         {highlights.map((highlight, index) => (
-          <div className="card" >
+          <div className="card">
             <img src={highlight.logo} alt={highlight.title} />
             <div className="description">
               <h4>{highlight.title}</h4>
               <p>{highlight.desc}</p>
             </div>
-            <Button text="Learn More" darkMode={darkMode} onClick={() => hanldeIndex(index)} />
+            <Button
+              text="Learn More"
+              darkMode={darkMode}
+              onClick={() => hanldeIndex(index)}
+            />
           </div>
         ))}
       </div>
@@ -82,6 +87,7 @@ function Highlights({ darkMode }) {
             link={highlights[cardIndex].link}
             setCardIndex={setCardIndex}
             darkMode={darkMode}
+            setHighlightsModelBox={setHighlightsModelBox}
           />
         </div>
       )}

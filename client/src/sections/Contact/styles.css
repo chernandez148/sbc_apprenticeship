@@ -47,13 +47,16 @@
 .email h3,
 .email h2,
 .phone h3,
-.phone h2 {
+.phone h2,
+.para-espanol h4 {
     margin: 0;
 }
 
 .email h3,
-.phone h3 {
+.phone h3,
+.para-espanol h4 {
     font-weight: 500;
+    font-size: 1.17em;
 }
 
 .email {
@@ -66,11 +69,17 @@
     text-align: left;
 }
 
-.trigger-text,
-.phone a {
+.trigger-text, .phone a {
     color: #4b4a81;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color .5s ease-in-out;
+    font-family: 'Kaushan Script', cursive;
+    font-weight: 500;
+}
+
+.para-espanol p,
+.para-espanol h2 {
+    margin: 0;
 }
 
 .trigger-text:hover,

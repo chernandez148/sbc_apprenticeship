@@ -24,6 +24,7 @@
     top: 0;
     right: 0;
     margin: 1rem;
+    padding: 1rem;
     border-top-right-radius: 12px;
     background-color: white;
 }
@@ -41,16 +42,19 @@
 }
 
 .contact-form-right {
-    color: black;
+    color: white;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    background: #000131;
+    background: linear-gradient(to right, #000131, #000000);
 }
 
 .contact-form-left {
+    color: #000927;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    background: #1CD8D2;
-    background: linear-gradient(to right, #93EDC7, #1CD8D2);
+    background: #ffffff;
+    background: linear-gradient(to right, #ffffff, #ffffff);
 }
 
 .ContactForm form {
@@ -59,14 +63,12 @@
     margin: 0 2rem;
 }
 
-.ContactForm input,
-.ContactForm textarea,
-.ContactForm button {
+.ContactForm input, .ContactForm textarea, .ContactForm button {
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #000927;
     font-size: 14px;
-    color: white;
+    color: #000927;
 }
 
 .ContactForm input {
@@ -85,7 +87,7 @@
 
 .ContactForm input::placeholder,
 .ContactForm textarea::placeholder {
-    color: white;
+    color: #000927;
 }
 
 .ContactForm input,
@@ -95,13 +97,10 @@
 
 .ContactForm button {
     margin: 1rem 0;
-    padding: 0.75rem 1rem;
     width: -moz-fit-content;
     width: fit-content;
+    color: white;
     border: 0;
-    background: white;
-    border-radius: 5px;
-    color: #6ce0cf;
 }
 
 .inner-contact-form-right {
@@ -126,7 +125,7 @@
     font-size: 14px;
     margin-left: 1rem;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .inner-contact-form-right li {
@@ -143,7 +142,7 @@
 }
 
 .inner-contact-form-right ul.follow li a {
-    color: black;
+    color: white;
 }
 
 
@@ -185,5 +184,9 @@
 
     .contact-form-left {
         border-radius: 12px;
+    }
+
+    .ContactForm .close-form {
+        color: #000927;
     }
 }
